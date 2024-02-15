@@ -1,0 +1,7 @@
+com\springpractice\app\entity\Customer.class
+com\springpractice\app\CustomerService.class
+com\springpractice\app\CustomerRepository.class
+com\springpractice\app\entity\Customer$CustomerBuilder.class
+com\springpractice\app\CustomerApplication.class
+com\springpractice\app\CustomerController.class
+com\springpractice\app\CustomerRegistrationRequest.class
