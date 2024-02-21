@@ -1,2 +1,6 @@
-D:\Downloads\my-app\fraud\src\main\java\com\springpractice\app\FraudApplication.java
-D:\Downloads\my-app\fraud\src\main\java\com\springpractice\app\entity\FraudCheckHistory.java
+/home/tlinh/Downloads/my-app/fraud/src/main/java/com/springpractice/app/FraudController.java
+/home/tlinh/Downloads/my-app/fraud/src/main/java/com/springpractice/app/FraudCheckResponse.java
+/home/tlinh/Downloads/my-app/fraud/src/main/java/com/springpractice/app/FraudCheckService.java
+/home/tlinh/Downloads/my-app/fraud/src/main/java/com/springpractice/app/FraudApplication.java
+/home/tlinh/Downloads/my-app/fraud/src/main/java/com/springpractice/app/entity/FraudCheckHistory.java
+/home/tlinh/Downloads/my-app/fraud/src/main/java/com/springpractice/app/FraudCheckHistoryRepository.java

@@ -12,7 +12,7 @@ spring:
   jpa: 
     hibernate:
       # create-drop will drop the schema and recreate it at every start of the application (ddl: data definition language)
-      ddl-auto: create-drop
+      ddl-auto: create
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
