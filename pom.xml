@@ -27,7 +27,7 @@
     <spring.boot.dependencies.version>3.2.2</spring.boot.dependencies.version>
     <spring.version>5.3.15</spring.version>
     <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
-    <jackson.version>2.10.3</jackson.version>
+    <jackson.version>2.12.0</jackson.version>
     <spring-boot.version>2.3.4.RELEASE</spring-boot.version>
   </properties>
 
@@ -56,8 +56,8 @@
   <dependencies>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <version>${jackson.version}</version>
+    <artifactId>jackson-databind</artifactId>
+    <version>${jackson.version}</version>
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>

@@ -3,6 +3,7 @@ spring:
     name: eureka-server
 server: 
   port: 8761
+  wait-time-in-ms-when-sync-empty: 0
 eureka:
   client: 
     registerWithEureka: false
