@@ -3,7 +3,6 @@ package com.springpractice.app.entity;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
@@ -26,7 +25,7 @@ public class FraudCheckHistory {
             name = "fraud_check_history_id_sequence",
             sequenceName = "fraud_check_history_id_sequence"
     )
-    @GeneratedValue(
+    @javax.persistence.GeneratedValue(
         strategy = GenerationType.SEQUENCE,
         generator = "fraud_check_history_id_sequence"
     )
