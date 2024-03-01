@@ -8,7 +8,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableFeignClients(
-    basePackages = "com.springpractice.fraud"
+    basePackages = {"com.springpractice.fraud", "com.springpractice.notification"}
 )
 public class CustomerApplication {
     public static void main(String[] args) {

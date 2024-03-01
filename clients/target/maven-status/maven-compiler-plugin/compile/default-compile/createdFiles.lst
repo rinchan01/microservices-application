@@ -1,2 +1,4 @@
+com/springpractice/notification/NotificationResponse.class
+com/springpractice/notification/NotificationClient.class
 com/springpractice/fraud/FraudClient.class
 com/springpractice/fraud/FraudCheckResponse.class

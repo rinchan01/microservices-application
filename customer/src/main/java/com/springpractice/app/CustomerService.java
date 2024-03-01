@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import com.springpractice.app.entity.Customer;
 import com.springpractice.fraud.FraudCheckResponse;
 import com.springpractice.fraud.FraudClient;
+import com.springpractice.notification.NotificationClient;
+import com.springpractice.notification.NotificationResponse;
 
 import lombok.AllArgsConstructor;
 
@@ -15,6 +17,11 @@ import lombok.AllArgsConstructor;
 public class CustomerService {
     private final CustomerRepository customerRepository;
     private final FraudClient fraudClient;
+    private final NotificationClient notificationClient;
+
+    public Customer getCustomer(Integer customerId) {
+        return customerRepository.findById(customerId).orElseThrow();
+    }
 
     @SuppressWarnings("null")
     public void registerCustomer(CustomerRegistrationRequest customerRequest) {
@@ -39,6 +46,8 @@ public class CustomerService {
         }
 
         // todo: send notification
-
+        else {
+            notificationClient.sendNotifications(customer.getId());
+        }
     }
 }

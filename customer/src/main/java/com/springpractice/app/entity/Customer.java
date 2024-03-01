@@ -23,10 +23,12 @@ import lombok.NoArgsConstructor;
 public class Customer {
 
     @Id
+    // connect to the sequence that we created in the database
     @SequenceGenerator(
-            name = "customer_id_sequence",
-            sequenceName = "customer_id_sequence"
+            name = "customer_id_sequence", // name of the sequence
+            sequenceName = "customer_id_sequence" // actual sequence name in the database
     )
+    // config the sequence to be auto incremented
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
             generator = "customer_id_sequence"

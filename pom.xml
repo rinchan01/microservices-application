@@ -15,6 +15,7 @@
     <module>clients</module>
     <module>customer</module>
     <module>fraud</module>
+    <module>notification</module>
   </modules>
 
   <name>services</name>
