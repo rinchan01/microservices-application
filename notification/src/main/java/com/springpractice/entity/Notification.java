@@ -30,6 +30,5 @@ public class Notification {
     )
     private Integer id;
     private Integer customerId;
-    @Builder.Default
-    private String message = "Customer is not a fraud";
+    private String message;
 }

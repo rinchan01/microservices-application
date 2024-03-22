@@ -8,7 +8,7 @@ import com.springpractice.app.entity.Customer;
 import com.springpractice.fraud.FraudCheckResponse;
 import com.springpractice.fraud.FraudClient;
 import com.springpractice.notification.NotificationClient;
-import com.springpractice.notification.NotificationResponse;
+import com.springpractice.notification.NotificationRequest;
 
 import lombok.AllArgsConstructor;
 
@@ -18,7 +18,7 @@ import lombok.AllArgsConstructor;
 public class CustomerService {
     private final CustomerRepository customerRepository;
     private final FraudClient fraudClient;
-    private final NotificationClient notificationClient;
+    // private final NotificationClient notificationClient;
     private final RabbitMQMessageProducer rabbitMQMessageProducer;
 
     public Customer getCustomer(Integer customerId) {
@@ -43,15 +43,12 @@ public class CustomerService {
         // customer.getId());
         FraudCheckResponse fraudCheckResponse = fraudClient.isFraudster(customer.getId());
 
-        if (fraudCheckResponse.isFraudster()) {
-            throw new IllegalStateException("fraudster");
-        }
+        // if (fraudCheckResponse.isFraudster()) {
+        // throw new IllegalStateException("fraudster");
+        // }
+        NotificationRequest notificationRequest = new NotificationRequest(customer.getId(),
+                String.format("Hi %s, welcome!", customer.getFirstName()));
+        rabbitMQMessageProducer.publish(notificationRequest, "internal.exchange", "internal.notification.routing-key");
 
-        // send notification
-        else {
-            String notificationRequest = "Dear " + customer.getFirstName() + " " + customer.getLastName()
-                    + ", your account has been created successfully";
-            rabbitMQMessageProducer.publish(notificationRequest, "internal.exchange", "internal.notification.routing-key");
-        }
     }
 }

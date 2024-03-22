@@ -3,18 +3,23 @@ package com.springpractice;
 import org.springframework.stereotype.Service;
 
 import com.springpractice.entity.Notification;
-import com.springpractice.notification.NotificationResponse;
+import com.springpractice.notification.NotificationRequest;
+
+import lombok.AllArgsConstructor;
 
 @Service
-public record NotificationService(NotificationRepository notificationRepository) {
+@AllArgsConstructor
+public class NotificationService{
+    private final NotificationRepository notificationRepository;
+
     @SuppressWarnings("null")
-    public NotificationResponse sendNotification(Integer customerId) {
+    public void sendNotification(NotificationRequest request) {
         notificationRepository.saveAndFlush(
                 Notification.builder()
-                    .customerId(null)
+                    .customerId(request.customerId())
+                    .message(request.message())
                     .build()
                 );
-        return new NotificationResponse("Notification sent");
 
     }
 }

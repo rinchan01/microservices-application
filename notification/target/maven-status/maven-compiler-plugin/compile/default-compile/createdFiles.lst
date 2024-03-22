@@ -1,6 +1,8 @@
 com/springpractice/NotificationRepository.class
 com/springpractice/NotificationController.class
 com/springpractice/NotificationService.class
+com/springpractice/NotificationConfig.class
 com/springpractice/entity/Notification.class
+com/springpractice/rabbitmq/NotificationConsumer.class
 com/springpractice/entity/Notification$NotificationBuilder.class
 com/springpractice/NotificationApplication.class
