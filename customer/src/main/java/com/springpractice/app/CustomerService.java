@@ -3,6 +3,7 @@ package com.springpractice.app;
 import org.springframework.stereotype.Service;
 // import org.springframework.web.client.RestTemplate;
 
+import com.amqp.RabbitMQMessageProducer;
 import com.springpractice.app.entity.Customer;
 import com.springpractice.fraud.FraudCheckResponse;
 import com.springpractice.fraud.FraudClient;
@@ -18,6 +19,7 @@ public class CustomerService {
     private final CustomerRepository customerRepository;
     private final FraudClient fraudClient;
     private final NotificationClient notificationClient;
+    private final RabbitMQMessageProducer rabbitMQMessageProducer;
 
     public Customer getCustomer(Integer customerId) {
         return customerRepository.findById(customerId).orElseThrow();
@@ -45,9 +47,11 @@ public class CustomerService {
             throw new IllegalStateException("fraudster");
         }
 
-        // todo: send notification
+        // send notification
         else {
-            notificationClient.sendNotifications(customer.getId());
+            String notificationRequest = "Dear " + customer.getFirstName() + " " + customer.getLastName()
+                    + ", your account has been created successfully";
+            rabbitMQMessageProducer.publish(notificationRequest, "internal.exchange", "internal.notification.routing-key");
         }
     }
 }

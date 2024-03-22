@@ -5,7 +5,12 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 
-@SpringBootApplication
+@SpringBootApplication(
+    scanBasePackages = {
+        "com.springpractice.app",
+        "com.amqp"
+    }
+)
 @EnableEurekaClient
 @EnableFeignClients(
     basePackages = {"com.springpractice.fraud", "com.springpractice.notification"}
