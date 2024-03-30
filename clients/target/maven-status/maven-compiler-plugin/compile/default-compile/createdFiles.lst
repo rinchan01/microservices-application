@@ -1,4 +1,4 @@
-com/springpractice/notification/NotificationClient.class
-com/springpractice/notification/NotificationRequest.class
-com/springpractice/fraud/FraudClient.class
-com/springpractice/fraud/FraudCheckResponse.class
+com\springpractice\fraud\FraudCheckResponse.class
+com\springpractice\notification\NotificationRequest.class
+com\springpractice\notification\NotificationClient.class
+com\springpractice\fraud\FraudClient.class
