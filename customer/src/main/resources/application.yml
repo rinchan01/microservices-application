@@ -7,7 +7,7 @@ spring:
   datasource: 
     username: 'postgres'
     url: jdbc:postgresql://postgres-postgresql.default.svc.cluster.local:5432/postgres
-    password: 6mSQNlVzv6
+    password: ${DATABASE_PASSWORD}
   jpa:
       hibernate:
           ddl-auto: update
@@ -22,7 +22,7 @@ spring:
     host: rabitmq-rabbitmq
     port: 5672
     username: user
-    password: zhblvdxkz43bKAtY
+    password: ${RABBITMQ_PASSWORD}
 customer:
   service:
     url: http://customer:8080
