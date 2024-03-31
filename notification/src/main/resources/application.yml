@@ -4,30 +4,32 @@ server:
 spring:
   application: 
     name: notification
-  # reuse exact same datasource configuration for this course, ideally you should have a separate database for each microservice
-  datasource:
+  datasource: 
     username: 'postgres'
-    url: jdbc:postgresql://localhost:5432/notification
-    password: '12345'
-  jpa: 
-    hibernate:
-      # create-drop will drop the schema and recreate it at every start of the application (ddl: data definition language)
-      ddl-auto: create-drop
-    properties:
+    url: jdbc:postgresql://postgres-postgresql.default.svc.cluster.local:5432/postgres
+    password: 6mSQNlVzv6
+  jpa:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        format_sql: true
-    show-sql: true
+          ddl-auto: update
+      properties:
+          hibernate:
+              dialect: org.hibernate.dialect.PostgreSQLDialect
+              format_sql: true
+      show-sql: true
   zipkin:
-    base-url: http://localhost:9411
+    base-url: http://zipkin.default.svc.cluster.local:80/
   rabbitmq:
-    addresses: localhost:5672
-eureka:
-  client: 
-    service-url: 
-      defaultZone: http://localhost:8761/eureka/
-    fetchRegistry: true
-    registerWithEureka: true
+    host: rabitmq-rabbitmq
+    port: 5672
+    username: user
+    password: zhblvdxkz43bKAtY
+notification:
+  service:
+    url: http://notification:8082
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration: DEBUG
 rabbitmq: 
   exchanges: 
     internal: internal.exchange

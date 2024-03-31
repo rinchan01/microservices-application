@@ -1,0 +1,39 @@
+server: 
+  port: 8082
+
+spring:
+  application: 
+    name: notification
+  datasource: 
+    username: 'postgres'
+    url: jdbc:postgresql://postgres-postgresql.default.svc.cluster.local:5432/postgres
+    password: 6mSQNlVzv6
+  jpa:
+      hibernate:
+          ddl-auto: update
+      properties:
+          hibernate:
+              dialect: org.hibernate.dialect.PostgreSQLDialect
+              format_sql: true
+      show-sql: true
+  zipkin:
+    base-url: http://zipkin.default.svc.cluster.local:80/
+  rabbitmq:
+    host: rabitmq-rabbitmq
+    port: 5672
+    username: user
+    password: zhblvdxkz43bKAtY
+notification:
+  service:
+    url: http://notification:8082
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration: DEBUG
+rabbitmq: 
+  exchanges: 
+    internal: internal.exchange
+  queues: 
+    notification: notification.queue
+  routing-keys: 
+    internal-notification: internal.notification.routing-key

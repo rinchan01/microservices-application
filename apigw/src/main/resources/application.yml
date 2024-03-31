@@ -4,7 +4,7 @@ spring:
   application: 
     name: api-gateway
   zipkin:
-    base-url: http://localhost:9411
+    base-url: http://zipkin.default.svc.cluster.local:80/
   cloud: 
     gateway: 
       routes: 
@@ -12,9 +12,3 @@ spring:
           uri: lb://CUSTOMER
           predicates: 
             - Path=/api/v1/customers/**
-eureka:
-  client: 
-    service-url: 
-      defaultZone: http://localhost:8761/eureka/
-    fetchRegistry: true
-    registerWithEureka: true

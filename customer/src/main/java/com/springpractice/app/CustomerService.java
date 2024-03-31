@@ -7,7 +7,6 @@ import com.amqp.RabbitMQMessageProducer;
 import com.springpractice.app.entity.Customer;
 import com.springpractice.fraud.FraudCheckResponse;
 import com.springpractice.fraud.FraudClient;
-import com.springpractice.notification.NotificationClient;
 import com.springpractice.notification.NotificationRequest;
 
 import lombok.AllArgsConstructor;
@@ -35,17 +34,7 @@ public class CustomerService {
                 .build();
         // store the customer in the database
         customerRepository.saveAndFlush(customer);
-        // todo: check if email is valid
-        // todo: check if email is already taken
-        // check if fraudster
-        // FraudCheckResponse fraudCheckResponse = restTemplate.getForObject(
-        // "http://FRAUD/api/v1/fraud-check/{customerId}", FraudCheckResponse.class,
-        // customer.getId());
         FraudCheckResponse fraudCheckResponse = fraudClient.isFraudster(customer.getId());
-
-        // if (fraudCheckResponse.isFraudster()) {
-        // throw new IllegalStateException("fraudster");
-        // }
         NotificationRequest notificationRequest = new NotificationRequest(customer.getId(),
                 String.format("Hi %s, welcome!", customer.getFirstName()));
         rabbitMQMessageProducer.publish(notificationRequest, "internal.exchange", "internal.notification.routing-key");

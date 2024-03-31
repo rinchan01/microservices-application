@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fraud
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fraud
+  template:
+    metadata:
+      labels:
+        app: fraud
+    spec:
+      containers:
+      - name: fraud
+        image: gcr.io/os-app-deploy/fraud:latest
+        args: ["-jar", "/usr/app/fraud-1.0-SNAPSHOT.jar"]
+        ports:
+        - containerPort: 8081
+        resources:
+          requests:
+            cpu: "200m"  # 200 milliCPU, or 0.2 of a CPU core
+            memory: "256Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fraud
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 8081
+  selector:
+    app: fraud

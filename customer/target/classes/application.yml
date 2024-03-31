@@ -1,0 +1,32 @@
+server: 
+  port: 8080
+
+spring:
+  application: 
+    name: customer
+  datasource: 
+    username: 'postgres'
+    url: jdbc:postgresql://postgres-postgresql.default.svc.cluster.local:5432/postgres
+    password: 6mSQNlVzv6
+  jpa:
+      hibernate:
+          ddl-auto: update
+      properties:
+          hibernate:
+              dialect: org.hibernate.dialect.PostgreSQLDialect
+              format_sql: true
+      show-sql: true
+  zipkin:
+    base-url: http://zipkin.default.svc.cluster.local:80/
+  rabbitmq:
+    host: rabitmq-rabbitmq
+    port: 5672
+    username: user
+    password: zhblvdxkz43bKAtY
+customer:
+  service:
+    url: http://customer:8080
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration: DEBUG
