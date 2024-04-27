@@ -4,10 +4,11 @@ server:
 spring:
   application: 
     name: customer
+  # reuse exact same datasource configuration for this course, ideally you should have a separate database for each microservice
   datasource: 
-    username: 'postgres'
-    url: jdbc:postgresql://postgres-postgresql.default.svc.cluster.local:5432/postgres
+    username: postgres
     password: ${DATABASE_PASSWORD}
+    url: jdbc:postgresql://postgres-postgresql.default.svc.cluster.local:5432/postgres
   jpa:
       hibernate:
           ddl-auto: update
@@ -19,7 +20,7 @@ spring:
   zipkin:
     base-url: http://zipkin.default.svc.cluster.local:80/
   rabbitmq:
-    host: rabitmq-rabbitmq
+    host: rabbitmq
     port: 5672
     username: user
     password: ${RABBITMQ_PASSWORD}

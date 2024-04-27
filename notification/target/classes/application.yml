@@ -5,9 +5,9 @@ spring:
   application: 
     name: notification
   datasource: 
-    username: 'postgres'
-    url: jdbc:postgresql://postgres-postgresql.default.svc.cluster.local:5432/postgres
+    username: postgres
     password: ${DATABASE_PASSWORD}
+    url: jdbc:postgresql://postgres-postgresql.default.svc.cluster.local:5432/postgres
   jpa:
       hibernate:
           ddl-auto: update

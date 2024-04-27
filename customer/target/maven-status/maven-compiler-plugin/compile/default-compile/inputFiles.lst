@@ -1,7 +1,7 @@
-D:\Downloads\my-app\customer\src\main\java\com\springpractice\app\CustomerConfig.java
-D:\Downloads\my-app\customer\src\main\java\com\springpractice\app\CustomerRegistrationRequest.java
-D:\Downloads\my-app\customer\src\main\java\com\springpractice\app\CustomerService.java
-D:\Downloads\my-app\customer\src\main\java\com\springpractice\app\CustomerRepository.java
-D:\Downloads\my-app\customer\src\main\java\com\springpractice\app\CustomerApplication.java
-D:\Downloads\my-app\customer\src\main\java\com\springpractice\app\CustomerController.java
-D:\Downloads\my-app\customer\src\main\java\com\springpractice\app\entity\Customer.java
+E:\Downloads\microservices-application-2\customer\src\main\java\com\springpractice\app\entity\Customer.java
+E:\Downloads\microservices-application-2\customer\src\main\java\com\springpractice\app\CustomerRegistrationRequest.java
+E:\Downloads\microservices-application-2\customer\src\main\java\com\springpractice\app\CustomerApplication.java
+E:\Downloads\microservices-application-2\customer\src\main\java\com\springpractice\app\CustomerRepository.java
+E:\Downloads\microservices-application-2\customer\src\main\java\com\springpractice\app\CustomerConfig.java
+E:\Downloads\microservices-application-2\customer\src\main\java\com\springpractice\app\CustomerController.java
+E:\Downloads\microservices-application-2\customer\src\main\java\com\springpractice\app\CustomerService.java

@@ -1,7 +1,7 @@
-D:\Downloads\my-app\notification\src\main\java\com\springpractice\rabbitmq\NotificationConsumer.java
-D:\Downloads\my-app\notification\src\main\java\com\springpractice\NotificationService.java
-D:\Downloads\my-app\notification\src\main\java\com\springpractice\NotificationRepository.java
-D:\Downloads\my-app\notification\src\main\java\com\springpractice\entity\Notification.java
-D:\Downloads\my-app\notification\src\main\java\com\springpractice\NotificationController.java
-D:\Downloads\my-app\notification\src\main\java\com\springpractice\NotificationConfig.java
-D:\Downloads\my-app\notification\src\main\java\com\springpractice\NotificationApplication.java
+E:\Downloads\microservices-application-2\notification\src\main\java\com\springpractice\NotificationConfig.java
+E:\Downloads\microservices-application-2\notification\src\main\java\com\springpractice\NotificationApplication.java
+E:\Downloads\microservices-application-2\notification\src\main\java\com\springpractice\NotificationService.java
+E:\Downloads\microservices-application-2\notification\src\main\java\com\springpractice\NotificationController.java
+E:\Downloads\microservices-application-2\notification\src\main\java\com\springpractice\entity\Notification.java
+E:\Downloads\microservices-application-2\notification\src\main\java\com\springpractice\rabbitmq\NotificationConsumer.java
+E:\Downloads\microservices-application-2\notification\src\main\java\com\springpractice\NotificationRepository.java
